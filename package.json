@@ -1,0 +1,23 @@
+{
+  "name": "outpatient_ai",
+  "version": "1.0.0",
+  "description": "Get dependencies\r - npm install express\r - npm add ejs\r Run server -> localhost:8081\r - node server.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BreeDay/Outpatient_AI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BreeDay/Outpatient_AI/issues"
+  },
+  "homepage": "https://github.com/BreeDay/Outpatient_AI#readme",
+  "dependencies": {
+    "firebase": "^8.2.10"
+  }
+}

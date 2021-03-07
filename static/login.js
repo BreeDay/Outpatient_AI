@@ -27,7 +27,7 @@
   const auth = firebase.auth();
 
   function signUp(){
-    console.log("got here");
+    var name = document.getElementById('name').value;
     var email = document.getElementById('email');
     var password = document.getElementById('password');
 
@@ -35,8 +35,14 @@
   .then((userCredential) => {
     // Signed in 
     var user = userCredential.user;
-    alert("Registration successful! Welcome 😊");
+    alert("Registration successful! Welcome, " + name + "😊");
+    $.get("/patient", function(name) {
+      alert("Posting name: " + name);
+    })
     window.location.assign("/patient");
+    // $.post("/patient", {patientName: name}, () => {
+    //   console.log("post success");
+    // })
   })
   .catch((error) => {
     alert(error.code);

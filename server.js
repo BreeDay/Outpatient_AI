@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 const path = require('path');
 const spawn = require("child_process").spawn;
 var app = express();
-
+//const firebase = require('firebase');
 const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccountKey.json');
 //initialize admin SDK using serciceAcountKey
@@ -37,8 +37,32 @@ app.get('/login', function (req, res) {
 
 app.get('/signup', function (req, res) {
    //res.sendFile(`${__dirname}/views/login.html`);
-   res.render('login');
+   res.render('signup');
 })
+
+
+app.get('/org', function (req, res) {
+   const testCollection = ["Bree", "Ritvi", "Caleb"];
+   const isOrganization = false; // else user
+
+
+   if (isOrganization) {
+      // get org's users as json.
+      res.render('org', viewData);
+   } else {
+      const viewData = {
+         username : "Medical Center",
+         testCollection: testCollection
+      }
+      res.render('org', viewData);
+   }
+
+})
+
+// POG IT WORKS!!!!!!!!!!!!! -- runs if change commented sections on redirect from login.js
+app.post('/patient', bodyParser.urlencoded({ extended: false }), (req, res) => {
+   console.log(req.body['patientName']);
+});
 
 app.get('/patient', function (req, res) {
    const welcomeText = "Welcome from EJS!";
@@ -50,7 +74,7 @@ app.get('/patient', function (req, res) {
       res.render('org', viewData);
    } else {
       const viewData = {
-         username : "caleb",
+         username : "Caleb",
          welcomeText: welcomeText,
          testCollection: testCollection
       }
@@ -69,15 +93,19 @@ app.get('/test', function (req, res) {
    });
 })
 
-app.get('/query', function(req, res) {
-   const cityRef = db.collection('cities').doc('SF');
-   const doc = cityRef.get();
-   if (!doc.exists) {
-   console.log('No such document!');
-   } else {
-   console.log('Document data:', doc.data());
-   }
+
+app.get('/query', async function(req, res) {
+   // if (firebase.auth().currentUser) {
+   //    console.log(firebase.auth().currentUser);
+   // }
+   const citiesRef = db.collection('cities');
+   const snapshot = await citiesRef.get(); // need to get this asynchronously
+   snapshot.forEach(doc => {
+   console.log(doc.id, '=>', doc.data());
+   });   
+   res.redirect('/patient'); // with data?
 })
+
 
 
 

@@ -38,7 +38,7 @@
         <div class="card">
                 💖🏚️ Welcome home <%= username %>!
         </div><br>
-
+        
         <div class="card">
             <h1>😷 Respiratory Tests</h1> 
             Deep Breaths!
@@ -54,39 +54,13 @@
         </div><br>
 
         <div class="card">
-            <h1>〽️ Vitals </h1>
-
-            <input type="vitals"></input>
-
-        </div>
+          <h1>〽️ Vitals </h1>
+      </div><br>
 
         <div class="card">
-          <ul>
-            <% testCollection.forEach(thing => { %>
-              <li><%= thing %></li>
-            <% }) %>
-          </ul>
-
-          <h1><%= topicHead %></h1>
-          <form name="form1" method="POST" action="/student/add">
-          <table>
-              <tr>
-              <td>First name</td>
-              <td><input type="text" name="fname" ></td>
-              </tr>
-              <tr>
-              <td>last name</td>
-              <td><input type="text" name="lname" ></td>
-              </tr>
-              <tr>
-              <td colspan="2"><input type="submit" value="Save" ></td>
-              </tr>
-          </table>
-          </form>   
-          <% if(userValue!=null){ %>    
-              <div> Data Entered as <%= userValue.first %>  <%= userValue.last %> </div>
-          <%}%> 
-        </div>
+            <h1>🏥 Add Organization </h1>
+            <input type="organization"></input>
+        </div><br>
 
 
         <!-- TODO: DOCTORS PAGE SHOULD BE ABLE TO VISUALIZE EVERYTHING CLEANLY-->
