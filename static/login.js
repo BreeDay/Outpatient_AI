@@ -1,14 +1,26 @@
 
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyAxHxJzuAdygymBaJWiwQrHKekwPAQ2gHE",
-    authDomain: "outpatientai.firebaseapp.com",
-    projectId: "outpatientai",
-    storageBucket: "outpatientai.appspot.com",
-    messagingSenderId: "436581701464",
-    appId: "1:436581701464:web:43985e350c379f4c84372d",
-    measurementId: "G-522VPT1D0C"
+    apiKey: "AIzaSyDJl_pbfefFTrRfu7cHMuHuakbgHncy_xQ",
+    authDomain: "tartan-306800.firebaseapp.com",
+    projectId: "tartan-306800",
+    storageBucket: "tartan-306800.appspot.com",
+    messagingSenderId: "24059805871",
+    appId: "1:24059805871:web:2f6543a18cd49cf488145a"
   };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Your web app's Firebase configuration
+  // var firebaseConfig = {
+  //   apiKey: "AIzaSyAxHxJzuAdygymBaJWiwQrHKekwPAQ2gHE",
+  //   authDomain: "outpatientai.firebaseapp.com",
+  //   projectId: "outpatientai",
+  //   storageBucket: "outpatientai.  appspot.com",
+  //   messagingSenderId: "436581701464",
+  //   appId: "1:436581701464:web:43985e350c379f4c84372d",
+  //   measurementId: "G-522VPT1D0C"
+  // };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
