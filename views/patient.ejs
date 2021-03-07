@@ -6,6 +6,7 @@
   <title>Outpatient AI</title>
   <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="static/styles.css">
+  <link rel="stylesheet" type="text/css" href="static/dashboard.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -31,25 +32,38 @@
 
     <div class="container  justify-content-center">
         <div class="card">
-                💖🏚️ Welcome home! (TODO: query firebase for currently logged in user, or pass as arg thru node?)
+                💖🏚️ Welcome home {TODO: query firebase for logged in user} !
         </div><br>
 
         <div class="card">
             <h1>😷 Respiratory Tests</h1> 
             Deep Breaths!
             (TODO: recording feature)
+            <a href="/test">test</a>
+            <div id="controls">
+            <button id="recordButton">Record</button>
+            <button id="pauseButton" disabled>Pause</button>
+            <button id="stopButton" disabled>Stop</button>
+            </div>
+            <div id="formats">Format: start recording to see sample rate</div>
+            <p><strong>Recordings:</strong></p>
+            <ol id="recordingsList"></ol>
         </div><br>
 
         <div class="card">
             <h1>〽️ Vitals </h1>
 
             <input type="vitals"></input>
-            <submit 
+
         </div>
+
+
 
         <!-- TODO: DOCTORS PAGE SHOULD BE ABLE TO VISUALIZE EVERYTHING CLEANLY-->
 
     </div>
     
 </body>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="static/app.js"></script>
 </html>
