@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/BreeDay/Outpatient_AI#readme",
   "dependencies": {
-    "firebase": "^8.2.10"
+    "firebase": "^8.2.10",
+    "firebase-admin": "^9.5.0"
   }
 }

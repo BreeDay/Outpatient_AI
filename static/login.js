@@ -36,9 +36,6 @@
     // Signed in 
     var user = userCredential.user;
     alert("Registration successful! Welcome, " + name + "😊");
-    $.get("/patient", function(name) {
-      alert("Posting name: " + name);
-    })
     window.location.assign("/patient");
     // $.post("/patient", {patientName: name}, () => {
     //   console.log("post success");
